@@ -8,7 +8,7 @@ Primeiramente você deve usar o link do GitHub Classroom enviado para você apó
 
 A tarefa 1 consiste em criar um arquivo no formato que mais te agradar chamado "Tarefa_1.xyz", sendo .xyz o formato, como por exemplo: .md, .txt, .pdf, .png, .mp3, .mp4 e assim por diante. O arquivo deve conter um Top 5 de músicas, filmes e séries que você mais gosta.
 
-Para isso é só criar o arquivo e incluir seus Top 5s. Caso queira fazer em .md, pesquise sobre formatação em Markdown para deixar seu arquivo ainda mais charmoso. Vocẽ tem total liberdade para apresentar essa lista da maneira e do formato que desejar. Depois de concluido, adicione seu documento ao repositório.
+Para isso é só criar o arquivo e incluir seus Top 5s. Caso queira fazer em .md, pesquise sobre formatação em Markdown para deixar seu arquivo ainda mais charmoso. Você tem total liberdade para apresentar essa lista da maneira e do formato que desejar. Depois de concluído, adicione seu documento ao repositório.
 
 
 ## Tarefa 2
