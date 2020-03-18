@@ -46,7 +46,7 @@ R: [RESPOSTA]
 9) Difficult level -> infinito: Como remover o Baidu em 3 passos simples?
 R: [RESPOSTA]
 
-10) Oh no! Você caiu na pergunta recursiva: vá para a pergunta 22.
+10) Oh no! Você caiu na pergunta recursiva: vá para a pergunta 21.
 R: [RESPOSTA]
 
 11) Complete: "Rosas são vermelhas, violetas são azuis..." 
