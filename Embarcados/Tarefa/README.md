@@ -30,7 +30,7 @@ Os arquivos do código de vocês se encontram nas pastas `src` (aqui ficam os .c
 
 ## Funções principais
 
-Seu programa deve utilizar algumas funções já pré estabelecidas, sejam elas já completamente implementadas por nós, ou apenas estruturadas para que vocês modifiquem da forma que bem entenderem.
+Seu programa deve utilizar algumas funções já preestabelecidas, sejam elas já completamente implementadas por nós, ou apenas estruturadas para que vocês modifiquem da forma que bem entenderem.
 
 ### Funções prontas
 
