@@ -30,7 +30,7 @@ Em `Mode`, precisamos, primeiramente, fornecer uma fonte de clock para nosso tim
 
 Agora, precisamos escolher qual GPIO mandará nossa PWM para o mundo físico, pois nessa placa, temos duas opções para o TIM2_CH1. Por padrão, o Cube setará para você o pino PA0. Porém, utilizaremos o PA5, que também suporta essa funcionalidade. Para trocar, basta segurar `Ctrl` e apertar e segurar o botão esquerdo do mouse em cima do PA0. Quando fizer isso, o PA5 irá se iluminar, então basta arrastar o mouse até ele e soltar. Pronto, agora, o pino PA5 deve ter ficado verde e o PA0 voltará para a cor cinza.
 
-Já temos uma fonte de clock e um pino, mas ainda falta setar algumas coisas e essa parte é com vocês! Todo o resto deve ser feito na aba `Configuration`: vocês devem configurar a PWM com frequencia de 1 kHz e o counter period escolhido deve permitir uma precisão de, no mínimo, 1% para definir o duty cycle. Se quiserem, podem usar o Fast Mode, como o STM32Guide sugere.
+Já temos uma fonte de clock e um pino, mas ainda falta setar algumas coisas e essa parte é com vocês! Todo o resto deve ser feito na aba `Configuration`: vocês devem configurar a PWM com frequência de 1 kHz e o counter period escolhido deve permitir uma precisão de, no mínimo, 1% para definir o duty cycle. Se quiserem, podem usar o Fast Mode, como o STM32Guide sugere.
 
 OBS: O clock interno do uC é de 72 MHz!
 
