@@ -6,7 +6,7 @@ Antes de mais nada, recomendo **fortemente** consultar o nosso [STM32Guide](http
 
 ## Requisitos do projeto
 
-A tarefa proposta necessita de apenas 3 elementos: um pino para leitura de ADC, um pino para mandar uma PWM e um pino de interrupção. Para isso, utilizaremos os seguintes GPIO's:
+A tarefa proposta necessita de apenas 3 elementos: um pino para leitura de ADC, um pino para mandar uma PWM e um pino de interrupção. Para isso, utilizaremos os seguintes pinos:
 
 * ADC: PA0
 * PWM: PA5
