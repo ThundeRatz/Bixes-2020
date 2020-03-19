@@ -14,7 +14,7 @@ A tarefa proposta necessita de apenas 3 elementos: um pino para leitura de ADC, 
 
 O código será rodado em uma [NUCLEO-F303RE](https://os.mbed.com/platforms/ST-Nucleo-F303RE/), que posui um `STM32F303RE`, microcontrolador de arquitetura ARM 32 bits, muito usados em nossos projetos.
 
-O arquivo `tarefa_embarcados.ioc`, disponibilizado para vocês, já possui algumas configurações básicas feitas, então não se assustem ao abrir o cube e ver várias coisas setadas, o que elas são vai ficar mais claro com o tempo.
+O arquivo `tarefa_embarcados.ioc`, disponibilizado para vocês na pasta `cube`, já possui algumas configurações básicas feitas, então não se assustem ao abrir o arquivo e ver várias coisas setadas, o que elas são vai ficar mais claro com o tempo.
 
 ## Configurando seu Hardware
 
