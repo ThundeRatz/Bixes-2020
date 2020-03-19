@@ -22,7 +22,7 @@ Bom, finalmente vamos ao que importa!
 
 ### PWM
 
-Para configurar a PWM enviada para o LED, precisarem de um timer. Por facilidade, utilizaremos o canal 1 do timer 2 (TIM2_CH1).
+Para configurar a PWM enviada para o LED, precisarão de um timer. Por facilidade, utilizaremos o canal 1 do timer 2 (TIM2_CH1).
 
 Abra a aba `Timers` a esquerda e selecione o **TIM2**. Uma outra aba chamada `TIM2 Mode and Configuration` aparecerá, e é aqui que iremos configurar nossa PWM.
 

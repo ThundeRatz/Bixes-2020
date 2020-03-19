@@ -13,7 +13,7 @@ Durante a semana (de 13/04 até 18/04), liberaremos uma pequena vídeo aula por 
 * 17/04 - Timers e PWM
 * 18/04 - ADC
 
-OBS: Os links serão adicionados conforme as aulas vão sendo publicadas.
+OBS: Os links serão adicionados conforme as aulas forem publicadas.
 
 ## Tarefa
 

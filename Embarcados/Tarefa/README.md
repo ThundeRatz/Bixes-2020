@@ -22,15 +22,15 @@ Os arquivos do código de vocês se encontram nas pastas `src` (aqui ficam os .c
 
 * `mcu.h` e `mcu.c`: Esses arquivos possuem as funções que configuram o microcontrolador, e **NÃO** devem ser editados.
 
-* `utils.h`: Esse arquivo pode ser incluido onde vocês quiserem, ele contem diversas funções matemáticas úteis que podem facilitar as contas de vocês. Sintam-se a vontade para incrementá-lo se acharem necessário.
+* `utils.h`: Esse arquivo pode ser incluído onde vocês quiserem, ele contém diversas funções matemáticas úteis que podem facilitar as contas de vocês. Sintam-se à vontade para incrementá-lo se acharem necessário.
 
-* `led_control.h` e `led_control.c`: Esses dois arquivos contem a lógica principal do programa que vocês deverão implementar. Algumas das funções aqui presentes já foram implementadas, outras ficam a cargo de vocês. Também podem adicionar funções publicas ou privadas, se acharem necessário.
+* `led_control.h` e `led_control.c`: Esses dois arquivos contém a lógica principal do programa que vocês deverão implementar. Algumas das funções aqui presentes já foram implementadas, outras ficam a cargo de vocês. Também podem adicionar funções públicas ou privadas, se acharem necessário.
 
 * `main.c`: Aqui devem ser feitas as devidas inicializações dos periféricos e deve ser feito o loop principal do programa.
 
 ## Funções principais
 
-Seu programa deve utilizar algumas funções já pré estabelecidas, sejam elas já completamente impementadas por nós, ou apenas estruturadas para que vocês modifiquem da forma que bem entenderem.
+Seu programa deve utilizar algumas funções já pré estabelecidas, sejam elas já completamente implementadas por nós, ou apenas estruturadas para que vocês modifiquem da forma que bem entenderem.
 
 ### Funções prontas
 
@@ -59,4 +59,4 @@ Seu programa deve utilizar algumas funções já pré estabelecidas, sejam elas 
         void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){}
     ```
 
-    Assim, quando o botão é apertado tudo que você escrever dentro da função acontecerá. Essa ferramenta poderosa possibilita a operação de robôs de sumô a distância, mudando estratégias com o simples aperto de um botão (mais especificamente o botão de um app que envia o comanado por bluetooth).
+    Assim, quando o botão é apertado tudo que você escrever dentro da função acontecerá. Essa ferramenta poderosa possibilita a operação de robôs de sumô a distância, mudando estratégias com o simples aperto de um botão (mais especificamente o botão de um app que envia o comando por bluetooth).
