@@ -24,9 +24,11 @@ Os arquivos do código de vocês se encontram nas pastas `src` (aqui ficam os .c
 
 * `utils.h`: Esse arquivo pode ser incluído onde vocês quiserem, ele contém diversas funções matemáticas úteis que podem facilitar as contas de vocês. Sintam-se à vontade para incrementá-lo se acharem necessário.
 
-* `led_control.h` e `led_control.c`: Esses dois arquivos contém a lógica principal do programa que vocês deverão implementar. Algumas das funções aqui presentes já foram implementadas, outras ficam a cargo de vocês. Também podem adicionar funções públicas ou privadas, se acharem necessário.
+* `led_control.h` e `led_control.c`: Esses dois arquivos contém a lógica principal do programa. Algumas das funções aqui presentes já foram implementadas, outras ficam a cargo de vocês.
+O `.h` contém a assinatura das funções, e não precisa ser modificado, a não ser que vocês achem necessário fazer mais funções públicas (ou seja, que podem ser chamadas em outros arquivos).
+O `.c` contém a definição do corpo das funções, aqui que vocês vão completar as `Funções que devem ser implementadas` (veja mais logo abaixo), e poderão fazer funções privadas (ou seja, que serão utilizadas apenas dentro desse documento).
 
-* `main.c`: Aqui devem ser feitas as devidas inicializações dos periféricos e deve ser feito o loop principal do programa.
+* `main.c`: Aqui vocês farão a inicialização dos periféricos e o loop principal do programa.
 
 ## Funções principais
 
