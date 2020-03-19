@@ -16,6 +16,18 @@ O repositório dessa tarefinha foi baseado no [STM32ProjectTemplate](https://git
 
 Antes de sair programando, é necessário configurar o arquivo `tarefa_embarcados.ioc`. Para isso, siga as intruções contidas em [Configurando o Cube](cube_configuration.md).
 
+## Estrutura de arquivos
+
+Os arquivos do código de vocês se encontram nas pastas `src` (aqui ficam os .c) e `inc` (aqui ficam os .h).
+
+* `mcu.h` e `mcu.c`: Esses arquivos possuem as funções que configuram o microcontrolador, e **NÃO** devem ser editados.
+
+* `utils.h`: Esse arquivo pode ser incluido onde vocês quiserem, ele contem diversas funções matemáticas úteis que podem facilitar as contas de vocês. Sintam-se a vontade para incrementá-lo se acharem necessário.
+
+* `led_control.h` e `led_control.c`: Esses dois arquivos contem a lógica principal do programa que vocês deverão implementar. Algumas das funções aqui presentes já foram implementadas, outras ficam a cargo de vocês. Também podem adicionar funções publicas ou privadas, se acahrem necessário.
+
+* `main.c`: Aqui devem ser feitas as devidas inicializações dos periféricos e deve ser feito o loop principal do programa.
+
 ## Funções principais
 
 Seu programa deve utilizar algumas funções já pré estabelecidas, sejam elas já completamente impementadas por nós, ou apenas estruturadas para que vocês modifiquem da forma que bem entenderem.
@@ -23,17 +35,23 @@ Seu programa deve utilizar algumas funções já pré estabelecidas, sejam elas 
 ### Funções prontas
 
 1. **mcu_init():**
-    Função essencial do programa. Nela serão inicializadados elementos como os pinos do botão e o clock do sistema. Essa função deve ser a primeira coisa a ser chamada no seu código.
+    Função essencial do programa, está implementada em `mcu.c` Nela serão inicializadados elementos como os pinos do botão e o clock do sistema. Essa função deve ser a primeira coisa a ser chamada no seu código.
 
-2. **ADC_init():**
-    Função que inicia o ADC do programa. Lembre-se de chamar essa função antes de tentar fazer leituras.
+2. **adc_init():**
+    Função que inicia o ADC do programa, implementada em `led_control.c`. Lembre-se de chamar essa função antes de tentar fazer leituras.
+
+3. **get_adc_result():**
+    Função que retorna o valor da última leitura feita pelo ADC, implementada em `led_control.c`.
 
 ### Funções que devem ser implementadas
 
-3. **PWM_init():**
-    Função que inicia e configura a PWM do programa.
+1. **pwm_init():**
+    Função que inicia e configura a PWM do programa. Consulte o [STM32Guide](https://github.com/ThundeRatz/STM32Guide) para implementar essa função.
 
-4. **Interrupção**
+2. **set_led_brightness(uint16_t brightness):**
+    Função que configura a PWM enviada para o LED com base no brilho recebido como parâmetro.
+
+3. **Interrupção:**
 
     A interrupção é uma pequena função que é chamada sempre que algum evento específico ocorre, como o aperto de um botão, exemplo utilizado nesse exercício. Para isso, você deve usar a função:
 
