@@ -60,4 +60,4 @@ Em `Configuration`, precisamos mudar apenas algumas coisas em `Parameters Settin
 
         * Sampling Time: **61.5 Cycles**
 
-Essas são apenas as coisas que precisam ser modificadas do padrão, as outras configurações devem ser mantidas no padrão do Cube.
+Essas são apenas as coisas que precisam ser modificadas, as outras configurações devem ser mantidas no padrão do Cube.
