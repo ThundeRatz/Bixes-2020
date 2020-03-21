@@ -1,21 +1,38 @@
 # Programação de dispositivos embarcados
 
-Embarcados são os nossos principais objetos de trabalho dentro da equipe, todo o desenvolvolvimento de software gira em torno dessa classe de dispositivos.
+Embarcados são os nossos principais objetos de trabalho dentro da equipe, todo o desenvolvolvimento de software na equipe gira em torno dessa classe de dispositivos.
 
-Alguns links interessantes para segurar a ansiedade antes da terceira aula do PS:
+## Cronograma
 
-(Você também pode ir lendo a respeito da [tarefa](./Tarefa/README.md))
+Durante a semana (de 13/04 até 18/04), liberaremos uma pequena vídeo aula por dia, para que vocês possam ir acompanhando aos poucos e tirando dúvidas, já que grande parte do projeto final do PS utilizará esse conteúdo.
 
-O que é PWM?
+* 13/04 - Introdução a sistemas embarcados
+* 14/04 - Como programar embarcados?
+* 15/04 - GPIO
+* 16/04 - Interrupções
+* 17/04 - Timers e PWM
+* 18/04 - ADC
+
+OBS: Os links serão adicionados conforme as aulas forem publicadas.
+
+## Tarefa
+
+Ao final das video aulas, vocês terão 2 semanas para fazer uma tarefinha, mas caso prefiram, já podem ir lendo a respeito [aqui](./Tarefa/README.md).
+
+## Extras
+
+Alguns links interessantes para segurar a ansiedade:
+
+* O que é PWM?
 https://learn.sparkfun.com/tutorials/pulse-width-modulation/all (inglês)
 https://www.citisystems.com.br/pwm/ (português)
 
-O que é ADC?
+* O que é ADC?
 https://learn.sparkfun.com/tutorials/analog-to-digital-conversion (inglês)
 https://www.embarcados.com.br/arduino-entradas-analogicas/ (português)
 
-Glossário de termos:
+* Glossário de termos:
 https://barrgroup.com/Embedded-Systems/Glossary-A
 
-O que é um embarcado?
+* O que é um embarcado?
 https://www.quora.com/What-is-an-embedded-system
