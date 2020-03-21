@@ -168,8 +168,7 @@ $ sudo pacman -Syu
 $ sudo pacman -S gcc make git 
 ```
 
-Há outras distribuições do Linux com gerenciadores de pacotes diferentes. Com uma pesquisa rápida no Google
-você consegue encontrar a forma equivalente para instalar os pacotes na sua distribuição.
+Há outras distribuições do Linux com gerenciadores de pacotes diferentes. Com uma pesquisa rápida no Google você consegue encontrar a forma equivalente para instalar os pacotes na sua distribuição.
 
 ### ARM_GCC
 
