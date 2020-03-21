@@ -31,7 +31,7 @@ Para realizar as tarefas do Processo Seletivo, é necessário instalar algumas c
 * STM32CubeProgrammer.
 * VSCode
 
-Os seis primeiros itens são ferramentas essenciais para qualquer membro da computação da equipe. Já o VSCode é um editor de texto com várias ferramentas e extensões que auxiliam a gente na hora de programar, não é essencial, mas muito recomendado.
+Os seis primeiros itens são ferramentas essenciais para qualquer membro da computação da equipe. Já o VSCode é um editor de texto com várias ferramentas e extensões que auxiliam na hora de programar, não é essencial, mas muito recomendado.
 
 # Intruções para instalação
 
@@ -92,9 +92,9 @@ There is NO WARRANTY, to the extent permitted by law.
 ```
 ### Git
 
-Para o [git], recomendo baixar por  e rodar o programa de instalação normalmente.
+O mais recomendado é baixar o [git] pelo link indicado e rodar o programa de instalação normalmente.
 
-Para testar se git foi instalado corretamente, digite:
+Para testar se o git foi instalado corretamente, digite:
 
 `git --version`
 

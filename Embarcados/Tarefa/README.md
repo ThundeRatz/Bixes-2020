@@ -1,6 +1,6 @@
 # Tarefa de Embarcados
 
-Olá. Venho aqui dar uma pequena explicação sobre o que será esperado para a tarefa de embarcados do Processo Seletivo.
+Aqui você encontrará uma pequena explicação sobre o que será esperado para a tarefa de embarcados do Processo Seletivo.
 
 ## Objetivo
 

@@ -1,6 +1,6 @@
 # Programação de dispositivos embarcados
 
-Embarcados são os nossos principais objetos de trabalho dentro da equipe, todo o desenvolvolvimento de software na equipe gira em torno dessa classe de dispositivos.
+Embarcados são os principais objetos de trabalho dentro da equipe, todo o desenvolvolvimento de software gira em torno dessa classe de dispositivos.
 
 ## Cronograma
 
