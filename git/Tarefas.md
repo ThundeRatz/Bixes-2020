@@ -13,7 +13,7 @@ Para isso é só criar o arquivo e incluir seus Top 5s. Caso queira fazer em .md
 
 ## Tarefa 2
 
-As instruções da tarefa 2 se encontram no arquivo "Tarefa_2.md". Quando você concluir a tarefa, deverá enviar essas modificações para a sua branch do repositório.
+As instruções da tarefa 2 se encontram no arquivo [Tarefa_2](./Tarefa_2.md). Quando você concluir a tarefa, deverá enviar essas modificações para a sua branch do repositório.
 
 ## Etapas finais
 
