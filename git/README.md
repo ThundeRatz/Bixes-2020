@@ -91,3 +91,6 @@ Quando você tenta dar um merge em duas branches ou dar pull nas mudanças remot
 ![Merge conflict](https://image.ibb.co/eiCEtv/Capturar.png "Merge Conflict")
 
 A parte de cima é a que está no seu arquivo original, e a parte de baixo é a que estava no outro arquivo, seja o de uma outra branch ou o que veio de um repositório remoto depois de um pull. Para resolver, você tem que escolher a versão que você quer, ou uma mistura das duas. Então, você precisa remover os marcadores do conflito(`<<<<<<<`, `=======` e `>>>>>>>`). Depois de fazer isso em todos os conflitos, você precisa usar o `git add` e o `git commit` para criar um commit com essas mudanças, e o conflito está resolvido.
+
+[aula_git]: https://try.github.io/levels/1/challenges/1
+[github_ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
