@@ -13,6 +13,6 @@ Instalem antes tudo o que for necessário para realizar as tarefas do Processo S
 O planejamento atual das aulas é esse:
 | Tema                                 | Dia           |   
 | :---                                 |     :----:    |
-| Videoaula de Git                    | 23/03         |
+| Videoaula de git                     | 23/03         |
 | Disponibilização do material de C    | 30/03         |
-| Videoaulas de embarcados            | 13/04 - 18/04 |
+| Videoaulas de embarcados             | 13/04 - 18/04 |
