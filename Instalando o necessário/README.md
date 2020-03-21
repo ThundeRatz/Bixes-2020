@@ -252,7 +252,7 @@ Depois será necessário, colocar alguns arquivos de regras para lidar com dispo
 $ sudo cp *.* /etc/udev/rules.d
 ```
 
-Para o CubeMX será feito algumas coisas semelhantes. Estando dentro da pasta que você extraiu, para poder executar o arquivo faça (substitua X.X.X pela versão baixada):
+Para o CubeMX serão feitas algumas coisas semelhantes. Estando dentro da pasta que você extraiu, para poder executar o arquivo faça (substitua X.X.X pela versão baixada):
 
 ```bash
 $ chmod 777 SetupSTM32CubeMX-X.X.X.linux
