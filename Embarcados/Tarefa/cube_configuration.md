@@ -51,7 +51,7 @@ Em `Configuration`, precisamos mudar apenas algumas coisas em `Parameters Settin
 * ADC_Settings
 
     * Clock Prescaler: **Synchronous clock mode divided by 2**
-    * Continuou COnversion Mode: **Enable**
+    * Continuou Conversion Mode: **Enable**
     * Overrun behavior: **Overrun data preserved**
 
 * ADC_Regular_ConversionMode
