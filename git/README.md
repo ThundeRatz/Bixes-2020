@@ -10,7 +10,7 @@ Nesse arquivo, tento explicar o uso básico do GitHub e branches. No caso de alg
 
 O git é instalado como qualquer outro programa, seja por um instalador do Windows ou pelo package manager do linux, pelo comando `yum/dnf/apt-get install git`(dependendo da sua distribuição). Depois de instalado, ele já pode ser usado em um terminal, independente do sistema operacional. Uma das primeiras coisas a se fazer é configurar sua conta do GitHub. Isso é importante para seus commits serem mais facilmente identificados. Para isso, é preciso executar 2 comandos:
 
-```
+```bash
 git config --global user.name "Seu Nome"
 git config --global user.email seuemail@exemplo.com
 ```
@@ -31,7 +31,7 @@ Já usando SSH, não será necessário digitar as informações de sua conta tod
 
 No caso desse repositório, o comando seria:
 
-```
+```bash
 git clone https://github.com/ThundeRatz/Bixes-2020.git
 ```
 
@@ -45,7 +45,7 @@ Feita essa configuração, o processo de clonar o repositório é basicamente o 
 
 No caso desse repositório, o comando seria:
 
-```
+```bash
 git clone git@github.com:ThundeRatz/Bixes-2020.git
 ```
 
@@ -65,7 +65,7 @@ Depois disso, para criar um commit, usamos o comando `git commit`. Esse comando 
 
 Os commits são locais, ou seja, eles são só da sua máquina. Eles normalmente são enviados um por um para o servidor, mas você pode usá-los pra se organizar, sem enviar. Depois que você tiver feito quantos commit quiser, e achar que está pronto para enviar seu código para o GitHub, basta executar o comando `git push`. No caso de algum erro, provavelmente seu repositório local está desatualizado, e isso pode ser resolvido com um pull. Caso haja problemas no auto-merge, eu ensino a resolver na parte final da aula. Caso não dê nenhum erro, o seu código já está no GitHub. Em resumo, um commit fica normalmente assim:
 
-```
+```bash
 git add .
 git commit -m "Mensagem"
 git push
