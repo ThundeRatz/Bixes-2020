@@ -18,21 +18,21 @@ Antes de sair programando, é necessário configurar o arquivo `tarefa_embarcado
 
 ## Estrutura de arquivos
 
-Os arquivos do código de vocês se encontram nas pastas `src` (aqui ficam os .c) e `inc` (aqui ficam os .h).
+Os arquivos do código se encontram nas pastas `src` (aqui ficam os .c) e `inc` (aqui ficam os .h).
 
 * `mcu.h` e `mcu.c`: Esses arquivos possuem as funções que configuram o microcontrolador, e **NÃO** devem ser editados.
 
-* `utils.h`: Esse arquivo pode ser incluído onde vocês quiserem, ele contém diversas funções matemáticas úteis que podem facilitar as contas de vocês. Sintam-se à vontade para incrementá-lo se acharem necessário.
+* `utils.h`: Esse arquivo pode ser incluído onde for necessário, ele contém diversas funções matemáticas úteis que podem facilitar muito as contas. Sinta-se à vontade para incrementá-lo!
 
-* `led_control.h` e `led_control.c`: Esses dois arquivos contém a lógica principal do programa. Algumas das funções aqui presentes já foram implementadas, outras ficam a cargo de vocês.
-O `.h` contém a assinatura das funções, e não precisa ser modificado, a não ser que vocês achem necessário fazer mais funções públicas (ou seja, que podem ser chamadas em outros arquivos).
-O `.c` contém a definição do corpo das funções, aqui que vocês vão completar as `Funções que devem ser implementadas` (veja mais logo abaixo), e poderão fazer funções privadas (ou seja, que serão utilizadas apenas dentro desse documento).
+* `led_control.h` e `led_control.c`: Esses dois arquivos contém a lógica principal do programa. Algumas das funções aqui presentes já foram implementadas, outras ficam a seu cargo.
+O `.h` contém a assinatura das funções, e não precisa ser modificado, a não ser que você ache necessário fazer mais funções públicas (ou seja, que podem ser chamadas em outros arquivos).
+O `.c` contém a definição do corpo das funções, aqui que você completará as `Funções que devem ser implementadas` (veja mais logo abaixo), e poderá escrever funções privadas (ou seja, que serão utilizadas apenas dentro desse documento).
 
-* `main.c`: Aqui vocês farão a inicialização dos periféricos e o loop principal do programa.
+* `main.c`: Aqui, você deverá fazer a inicialização dos periféricos e o loop principal do programa.
 
 ## Funções principais
 
-Seu programa deve utilizar algumas funções já preestabelecidas, sejam elas já completamente implementadas por nós, ou apenas estruturadas para que vocês modifiquem da forma que bem entenderem.
+Seu programa deve utilizar algumas funções já preestabelecidas, sejam elas já completamente implementadas, ou apenas estruturadas para que você modifique da forma que bem entender.
 
 ### Funções prontas
 
