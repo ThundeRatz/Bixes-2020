@@ -10,7 +10,7 @@ Nesse arquivo, tento explicar o uso básico do GitHub e branches. No caso de alg
 
 O git é instalado como qualquer outro programa, seja por um instalador do Windows ou pelo package manager do linux, pelo comando `yum/dnf/apt-get install git`(dependendo da sua distribuição). Depois de instalado, ele já pode ser usado em um terminal, independente do sistema operacional. Uma das primeiras coisas a se fazer é configurar sua conta do GitHub. Isso é importante para seus commits serem mais facilmente identificados. Para isso, é preciso executar 2 comandos:
 
-```
+```bash
 git config --global user.name "Seu Nome"
 git config --global user.email seuemail@exemplo.com
 ```
@@ -31,7 +31,9 @@ Já usando SSH, não será necessário digitar as informações de sua conta tod
 
 No caso desse repositório, o comando seria:
 
-`git clone https://github.com/ThundeRatz/Bixos-2020.git`
+```bash
+git clone https://github.com/ThundeRatz/Bixes-2020.git
+```
 
 ### Usando SSH
 
@@ -43,7 +45,9 @@ Feita essa configuração, o processo de clonar o repositório é basicamente o 
 
 No caso desse repositório, o comando seria:
 
-`git clone git@github.com:ThundeRatz/Bixos-2020.git`
+```bash
+git clone git@github.com:ThundeRatz/Bixes-2020.git
+```
 
 ## Trabalhando com o repositório
 
@@ -61,7 +65,7 @@ Depois disso, para criar um commit, usamos o comando `git commit`. Esse comando 
 
 Os commits são locais, ou seja, eles são só da sua máquina. Eles normalmente são enviados um por um para o servidor, mas você pode usá-los pra se organizar, sem enviar. Depois que você tiver feito quantos commit quiser, e achar que está pronto para enviar seu código para o GitHub, basta executar o comando `git push`. No caso de algum erro, provavelmente seu repositório local está desatualizado, e isso pode ser resolvido com um pull. Caso haja problemas no auto-merge, eu ensino a resolver na parte final da aula. Caso não dê nenhum erro, o seu código já está no GitHub. Em resumo, um commit fica normalmente assim:
 
-```
+```bash
 git add .
 git commit -m "Mensagem"
 git push
@@ -91,3 +95,6 @@ Quando você tenta dar um merge em duas branches ou dar pull nas mudanças remot
 ![Merge conflict](https://image.ibb.co/eiCEtv/Capturar.png "Merge Conflict")
 
 A parte de cima é a que está no seu arquivo original, e a parte de baixo é a que estava no outro arquivo, seja o de uma outra branch ou o que veio de um repositório remoto depois de um pull. Para resolver, você tem que escolher a versão que você quer, ou uma mistura das duas. Então, você precisa remover os marcadores do conflito(`<<<<<<<`, `=======` e `>>>>>>>`). Depois de fazer isso em todos os conflitos, você precisa usar o `git add` e o `git commit` para criar um commit com essas mudanças, e o conflito está resolvido.
+
+[aula_git]: https://try.github.io/levels/1/challenges/1
+[github_ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
