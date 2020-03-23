@@ -96,5 +96,74 @@ Quando você tenta dar um merge em duas branches ou dar pull nas mudanças remot
 
 A parte de cima é a que está no seu arquivo original, e a parte de baixo é a que estava no outro arquivo, seja o de uma outra branch ou o que veio de um repositório remoto depois de um pull. Para resolver, você tem que escolher a versão que você quer, ou uma mistura das duas. Então, você precisa remover os marcadores do conflito(`<<<<<<<`, `=======` e `>>>>>>>`). Depois de fazer isso em todos os conflitos, você precisa usar o `git add` e o `git commit` para criar um commit com essas mudanças, e o conflito está resolvido.
 
+## Usando forks
+
+Um fork é uma cópia de um repositório. Fazer o fork de um repositório nos permite mudá-lo livremente sem afetar o original. Normalmente, forks são utilizados para propor mudanças para o projeto de outra pessoa ou para usar o projeto de outra pessoa como base para seu próprio projeto.
+
+Para fazer um fork, basta ir ao repositório desejado e clicar em "Fork" no canto superior direito. Isso criará uma cópia do repositório em sua conta do GitHub. Podemos utilizar esse fork como qualquer outro repositório, aplicando as mesmas coisas já mencionadas até agora.
+
+Algo a mais que é utilizado ao trabalhar com forks é múltiplos repositórios remotos. Por exemplo, você tem um fork clonado no seu computador e o repositório original fez mais mudanças, logo, seu fork está desatualizado. Para atualizá-lo, precisaria dar pull no repositório original e dar push no fork. Como fazer isso?
+
+Para começar, utilize o comando `git remote -v` para ver os repositórios remotos. No meu caso, clonei o repositório Bixes-2020 original, então, a saída que esse comando mostra é a seguinte:
+```
+origin  https://github.com/ThundeRatz/Bixes-2020.git (fetch)
+origin  https://github.com/ThundeRatz/Bixes-2020.git (push)
+```
+
+Para poder modificar o fork, preciso adicionar o "link" dele nessa lista de repositórios remotos. Para fazer isso, utiliza-se o comando `git remote add <nome local do remoto> <link do repositório>`. O nome local é escolhido por você.
+
+No meu caso, para adicionar meu fork, preciso rodar o seguinte comando:
+`git remote add meu_fork https://github.com/thor-the-rat/Bixes-2020.git`
+
+Para visualizar as mudanças, rode novamente o comando `git remote -v`. No meu caso, obtenho a saída:
+```
+meu_fork        https://github.com/thor-the-rat/Bixes-2020.git (fetch)
+meu_fork        https://github.com/thor-the-rat/Bixes-2020.git (push)
+origin  https://github.com/ThundeRatz/Bixes-2020.git (fetch)
+origin  https://github.com/ThundeRatz/Bixes-2020.git (push)
+```
+
+É possível também alterar esses nomes locais do repositório, com o comando `git remote rename <nome_atual> <novo_nome>`. Então, posso renomear o origin dessa forma: `git remote rename origin thunder`. Isso alterará o nome "origin" para "thunder". Rodando `git remote -v` novamente temos:
+```
+meu_fork        https://github.com/thor-the-rat/Bixes-2020.git (fetch)
+meu_fork        https://github.com/thor-the-rat/Bixes-2020.git (push)
+thunder https://github.com/ThundeRatz/Bixes-2020.git (fetch)
+thunder https://github.com/ThundeRatz/Bixes-2020.git (push)
+```
+
+Assim, para dar pull no repositório original, branch master, utilizo o comando:
+`git pull thunder master`
+
+E para dar push no fork, na branch master, utilizo o comando:
+`git push meu_fork master`
+
+Agora, digamos que eu tenha feito modificações no meu fork e queira sugerir as mesmas mudanças no repositório original. Para isso, preciso ir ao repositório original no GitHub e clicar em "New pull request", logo acima do conteúdo da pasta. Como estou trabalhando com forks, clique em "compare across forks". Então, no head fork, escolha seu fork. No meu caso, escolho "thor-the-rat/Bixes-2020". Ao selecionar seu fork, aparecerá um campo para preencher título e comentário sobre as mudanças, além da comparação entre os dois repositórios para melhor visualização das mudanças. Se estiver tudo certo, clique em "Create pull request".
+
+Com isso, seu pull request aparecerá para os administradores do repositório original, que podem aceitar, rejeitar e sugerir mudanças ao seu código. Se for aceito, suas mudanças serão colocadas no original.
+
+## Aliases
+
+Aliases são atalhos para comandos do git. Esses atalhos são úteis principalmente para comandos muito longos ou comandos que você não considera intuitivos. Há duas formas de criar aliases:
+
+1. Usando o comando `git config --global alias.<atalho> <comando>`.
+2. Editando o arquivo `.gitconfig` no diretório home (`~`), adicionando linhas dessa forma:
+
+```
+[alias]
+    <atalho1> = <comando1>
+    <atalho2> = <comando2>
+    (...)
+```
+
+Exemplos:
+Executar o comando `git config --global alias.graph log --all --graph --decorate --color --oneline` ou editar o arquivo `.gitconfig`, adicionando o abaixo:
+
+```
+[alias]
+    graph = log --all --graph --decorate --color --oneline
+```
+
+permite executar o comando `git log --all --graph --decorate --color --oneline` digitando apenas `git graph`.
+
 [aula_git]: https://try.github.io/levels/1/challenges/1
 [github_ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
