@@ -11,6 +11,10 @@ Além disso, têm sempre o maravilhoso Google e o Stack Overflow ~~melhor site~~
 Lembrando também que qualquer dúvida, pode perguntar tanto para seus veteranos como no fórum, não precisa ter vergonha :)
 
 ---
+## Tarefas
+A partir do momento que o material for disponibilizado, você terá duas semanas para entregar algumas [Tarefas](./Tarefas/README.md). Siga o link para ler um pouco mais sobre elas.
+
+---
 ## Compilação
 Programas em C são compilados usando o gcc (GNU Compiler Collection), para usá-lo:
 * Primeiro deve-se criar os objetos dos arquivos fonte que se deseja compilar:
