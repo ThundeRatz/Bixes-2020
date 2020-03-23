@@ -1,4 +1,4 @@
-# Tarefa de  C
+# Tarefa 2 - Lógica de Programação
 
 Nesta tarefa exitem dois robôs feitos somente com caracteres, o robô 'rozeta' e o robô 'oponent'. O objetivo do rozeta é encontrar seu oponente, algo semelhante ao que acontece em partidas de sumôs.
 
