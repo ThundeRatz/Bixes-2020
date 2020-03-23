@@ -33,8 +33,7 @@ $ gcc -o executavel main.c helloworld.c
 ```
 Isso cria os objetos, usa-os e os apaga, mas isso só em bom quando temos um ou dois arquivos,
 se tivermos vários, é melhor o primeiro método, já que se mudarmos algo só precisamos recriar os .o
-dos arquivos modificados. Já se tivermos realmente *muitos* arquivos, o melhor é utilizar um Makefile,
-como verão na aula de make!
+dos arquivos modificados. Já se tivermos realmente *muitos* arquivos, o melhor é utilizar um Makefile.
 * Também existem [várias flags][gcc-flags] que podem ser colocadas no final dessa linha, como `-Wall`,
 que habilita vários warnings úteis. Para uso na guerra, sempre usem `-Wall -Wextra`, que ativam muitos
 warnings. Eles geralmente te avisam de qualquer erro facilmente identificável por passagem de tipos errados
