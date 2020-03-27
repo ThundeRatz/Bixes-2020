@@ -2,7 +2,7 @@
 
 As tarefas de Git serão duas: uma que tem como objetivo ensinar a você como criar um novo arquivo e adicionar ele ao repositório; e uma outra tarefa tem como foco ensinar como modificar um arquivo e enviar estas mudanças para o repositório online.
 
-Estando no seu repositório, você deve fazer uma "branch" dele com o nome "tarefa_git". Assim que você criar a nova branch estará pronto para fazer as suas tarefas! Nessa branch você deverá editar e criar os arquivos dessa tarefa dentro da pasta `git/`, quando terminar é só fazer o Pull Request pra branch master.
+Estando no seu repositório, você deve fazer uma "branch" dele com o nome "tarefa_git". Assim que você criar a nova branch estará pronto para fazer as suas tarefas! Nessa branch você deverá editar e criar os arquivos dessa tarefa dentro dessa pasta, a pasta `git/`, quando terminar é só fazer o Pull Request pra branch master.
 
 ## Tarefa 1
 
