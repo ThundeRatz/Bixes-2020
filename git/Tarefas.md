@@ -2,7 +2,7 @@
 
 As tarefas de Git serão duas: uma que tem como objetivo ensinar a você como criar um novo arquivo e adicionar ele ao repositório; e uma outra tarefa tem como foco ensinar como modificar um arquivo e enviar estas mudanças para o repositório online.
 
-Primeiramente você deve usar o link do GitHub Classroom enviado para você após a aula do dia 17/03 para criar um repositório só seu das tarefas. Feito o repositório, você então irá clonar ele para um diretório no seu computador. Recomendo colocar ele em um local que você irá se lembrar, seja nos seus documentos ou na área de trabalho. Com o repositório salvo no seu computador, você deve fazer uma "branch" dele com o nome "tarefa_git". Assim que você criar a nova branch estará pronto para fazer as suas tarefas!
+Estando no seu repositório, você deve fazer uma "branch" dele com o nome "tarefa_git". Assim que você criar a nova branch estará pronto para fazer as suas tarefas! Nessa branch você deverá editar e criar os arquivos dessa tarefa dentro da pasta `git/`, quando terminar é só fazer o Pull Request pra branch master.
 
 ## Tarefa 1
 
