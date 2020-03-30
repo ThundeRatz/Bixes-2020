@@ -4,16 +4,16 @@ Embarcados são os principais objetos de trabalho dentro da equipe, todo o desen
 
 ## Cronograma
 
-Durante a semana (de 13/04 até 18/04), uma pequena vídeo aula por dia será liberada, para que você possa acompanhar aos poucos e tirar dúvidas, já que grande parte do projeto final do PS utilizará esse conteúdo.
+De 09/04 até 14/04, uma pequena vídeo aula por dia será liberada, para que você possa acompanhar aos poucos e tirar dúvidas, já que grande parte do projeto final do PS utilizará esse conteúdo.
 
 | Tema                                    | Dia           |
 | :---                                    |     :----:    |
-| Introdução a sistemas embarcados        | 13/04         |
-| Como programar embarcados?              | 14/04         |
-| GPIO                                    | 15/04         |
-| Interrupções                            | 16/04         |
-| Timers e PWM                            | 17/04         |
-| ADC                                     | 18/04         |
+| Introdução a sistemas embarcados        | 09/04         |
+| Como programar embarcados?              | 10/04         |
+| GPIO                                    | 11/04         |
+| Interrupções                            | 12/04         |
+| Timers e PWM                            | 13/04         |
+| ADC                                     | 14/04         |
 
 OBS: Os links serão adicionados conforme as aulas forem publicadas.
 

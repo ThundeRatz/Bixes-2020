@@ -12,7 +12,7 @@ Lembrando também que qualquer dúvida, pode perguntar tanto para seus veteranos
 
 ---
 ## Tarefas
-A partir do momento que o material for disponibilizado, você terá duas semanas para entregar algumas [Tarefas](./Tarefas/README.md). Siga o link para ler um pouco mais sobre elas.
+A partir do momento que o material for disponibilizado, você terá até dia 08/04 para realizar as [Tarefas](./Tarefas/README.md). Siga o link para ler um pouco mais sobre elas.
 
 ---
 ## Compilação
