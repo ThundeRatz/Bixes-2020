@@ -36,11 +36,11 @@ int main() {
     scanf(" %c", &mov);
 
     if (mov != 's') {
-        printf("Bye bye");
+        printf("Bye bye\n");
         return 0;
     }
 
-    strategie_one();
-    
+    strategy_one();
+
     return 0;
 }

@@ -35,11 +35,11 @@ void set_oponent_position(uint8_t position) {
         oponent_column = 0;
     } else if (position == 2) {
         oponent_line = 0;
-        oponent_column = (DOJO_COLUMNS - ROBOT_COLUMNS)/2;
+        oponent_column = (DOJO_COLUMNS - ROBOT_COLUMNS) / 2;
     } else if (position == 3) {
         oponent_line = 0;
         oponent_column = DOJO_COLUMNS - ROBOT_COLUMNS;
-    } else /*if (position == 4)*/ {
+    } else {
         oponent_line = DOJO_LINES - ROBOT_LINES;
         oponent_column = DOJO_COLUMNS - ROBOT_COLUMNS;
     }

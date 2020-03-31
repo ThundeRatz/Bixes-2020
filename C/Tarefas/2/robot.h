@@ -17,8 +17,8 @@
  * Public Constants
  *****************************************/
 
-#define ROBOT_LINES 5
-#define ROBOT_COLUMNS 19
+#define ROBOT_LINES (5)
+#define ROBOT_COLUMNS (19)
 
 /*****************************************
  * Public Types

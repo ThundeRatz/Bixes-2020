@@ -18,20 +18,26 @@
  * Public Variables Definitions
  *****************************************/
 
-float delay_time = 0.5;
+float delay_time = 0.5; /**< Delay time in microseconds */
 
 uint8_t rozeta_line = DOJO_LINES - ROBOT_LINES;
-uint8_t rozeta_column = (DOJO_COLUMNS - ROBOT_COLUMNS)/2; 
+uint8_t rozeta_column = (DOJO_COLUMNS - ROBOT_COLUMNS) / 2;
 
 uint8_t oponent_line = 0;
-uint8_t oponent_column = 0; 
+uint8_t oponent_column = 0;
+
+/*****************************************
+ * Private Functions Prototypes
+ *****************************************/
+
+static void refresh_dojo(void);
 
 /*****************************************
  * Public Functions Bodies Definitions
  *****************************************/
 
 void set_speed(float speed) {
-    delay_time = (1/speed) * 1000; /**< Delay time in microseconds */
+    delay_time = (1.0 / speed) * 1000;
 }
 
 void move_up() {
@@ -39,14 +45,7 @@ void move_up() {
         rozeta_line--;
     }
 
-    clean_dojo();
-
-    print_robot(OPONENT, oponent_line, oponent_column);
-    print_robot(ROZETA, rozeta_line, rozeta_column);
-
-    delay(delay_time);
-
-    print_dojo();
+    refresh_dojo();
 }
 
 void move_down() {
@@ -54,14 +53,7 @@ void move_down() {
         rozeta_line++;
     }
 
-    clean_dojo();
-
-    print_robot(OPONENT, oponent_line, oponent_column);
-    print_robot(ROZETA, rozeta_line, rozeta_column);
-
-    delay(delay_time);
-
-    print_dojo();
+    refresh_dojo();
 }
 
 void move_right() {
@@ -69,14 +61,7 @@ void move_right() {
         rozeta_column++;
     }
 
-    clean_dojo();
-
-    print_robot(OPONENT, oponent_line, oponent_column);
-    print_robot(ROZETA, rozeta_line, rozeta_column);
-
-    delay(delay_time);
-
-    print_dojo();
+    refresh_dojo();
 }
 
 void move_left() {
@@ -84,6 +69,14 @@ void move_left() {
         rozeta_column--;
     }
 
+    refresh_dojo();
+}
+
+/*****************************************
+ * Private Functions Bodies Definitions
+ *****************************************/
+
+void refresh_dojo(void) {
     clean_dojo();
 
     print_robot(OPONENT, oponent_line, oponent_column);

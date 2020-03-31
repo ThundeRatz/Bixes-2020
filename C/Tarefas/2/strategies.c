@@ -21,10 +21,11 @@ int sensor_position = 0;
  * Public Functions Bodies Definitions
  *****************************************/
 
-void strategie_one() {
+void strategy_one() {
     set_speed(3);
+
     if (sensor_position == 2) {
-        while(rozeta_line - 1 > oponent_line){
+        while (rozeta_line - 1 > oponent_line) {
             move_up();
         }
     }

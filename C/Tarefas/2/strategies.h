@@ -21,6 +21,6 @@ extern int sensor_position;
  * Public Functions Prototypes
  *****************************************/
 
-void strategie_one();
+void strategy_one();
 
 #endif // __STRATEGIES_H__

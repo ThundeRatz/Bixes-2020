@@ -26,7 +26,7 @@ char dojo[DOJO_LINES][DOJO_COLUMNS];
 
 void clean_dojo() {
     for (int i = 0; i < DOJO_LINES; i++) {
-        for (int j = 0; j < DOJO_COLUMNS; j++){
+        for (int j = 0; j < DOJO_COLUMNS; j++) {
             dojo[i][j] = ' ';
         }
     }
@@ -34,27 +34,33 @@ void clean_dojo() {
 
 void print_dojo() {
     if (match_start) {
-        printf("\033[2J\033[H"); /**< Limpa o terminal */
+        printf("\033[2J\033[H"); // Limpa o terminal
     }
 
     printf("%s", "╔");
+
     for (int i = 0; i < DOJO_LINES + 42; i++) {
         printf("%s", "═");
     }
+
     printf("╗\n");
 
     for (int i = 0; i < DOJO_LINES; i++) {
         printf("%s", "║");
-        for (int j = 0; j < DOJO_COLUMNS; j++){
+
+        for (int j = 0; j < DOJO_COLUMNS; j++) {
             printf("%c", dojo[i][j]);
         }
+
         printf("%s", "║");
         printf("\n");
     }
 
     printf("%s", "╚");
+
     for (int i = 0; i < DOJO_LINES + 42; i++) {
         printf("%s", "═");
     }
+
     printf("╝\n");
 }

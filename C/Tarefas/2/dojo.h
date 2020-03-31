@@ -19,8 +19,8 @@
  * Public Constants
  *****************************************/
 
-#define DOJO_LINES (3*ROBOT_LINES + 2)
-#define DOJO_COLUMNS (3*ROBOT_COLUMNS + 2)
+#define DOJO_LINES (3 * ROBOT_LINES + 2)
+#define DOJO_COLUMNS (3 * ROBOT_COLUMNS + 2)
 
 /*****************************************
  * Public Variables

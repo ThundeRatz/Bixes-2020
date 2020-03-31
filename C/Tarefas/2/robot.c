@@ -19,19 +19,19 @@ orientation_t current_rozeta_orientation = UPWARD;
 orientation_t current_oponent_orientation = UPWARD;
 
 char* upwards_robot[] = {
-"                   ",
-"    ___________    ",
-"   |___________|   ",
-"   |           |   ",
-"  [|___________|]  ", 
+    "                   ",
+    "    ___________    ",
+    "   |___________|   ",
+    "   |           |   ",
+    "  [|___________|]  ",
 };
 
 char* downwards_robot[] = {
-"                   ",
-"    ___________    ",
-"  [|           |]  ",
-"   |___________|   ",
-"   |___________|   ",
+    "                   ",
+    "    ___________    ",
+    "  [|           |]  ",
+    "   |___________|   ",
+    "   |___________|   ",
 };
 
 /*****************************************
@@ -44,6 +44,7 @@ void set_orientation(robot_t robot, orientation_t orientation) {
             current_rozeta_orientation = orientation;
             break;
         }
+
         case OPONENT: {
             current_oponent_orientation = orientation;
             break;
@@ -60,17 +61,20 @@ void print_robot(robot_t robot, uint8_t dist_x, uint8_t dist_y) {
                 case UPWARD: {
                     for (int i = 0; i < ROBOT_LINES; i++) {
                         for (int j = 0; j < ROBOT_COLUMNS; j++) {
-                           robot_apearence[i][j] = upwards_robot[i][j];
+                            robot_apearence[i][j] = upwards_robot[i][j];
                         }
                     }
+
                     break;
                 }
+
                 case DOWNWARD: {
                     for (int i = 0; i < ROBOT_LINES; i++) {
                         for (int j = 0; j < ROBOT_COLUMNS; j++) {
                             robot_apearence[i][j] = downwards_robot[i][j];
                         }
                     }
+
                     break;
                 }
             }
@@ -87,7 +91,8 @@ void print_robot(robot_t robot, uint8_t dist_x, uint8_t dist_y) {
             }
 
             break;
-        } 
+        }
+
         case OPONENT: {
             switch (current_oponent_orientation) {
                 case UPWARD: {
@@ -96,15 +101,18 @@ void print_robot(robot_t robot, uint8_t dist_x, uint8_t dist_y) {
                             robot_apearence[i][j] = upwards_robot[i][j];
                         }
                     }
+
                     robot_apearence[3][9] = ' ';
                     break;
                 }
+
                 case DOWNWARD: {
                     for (int i = 0; i < ROBOT_LINES; i++) {
                         for (int j = 0; j < ROBOT_COLUMNS; j++) {
                             robot_apearence[i][j] = downwards_robot[i][j];
                         }
                     }
+
                     robot_apearence[3][9] = '_';
                     break;
                 }
