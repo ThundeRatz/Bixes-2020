@@ -5,7 +5,7 @@
  *
  * @author Lucas Haug <lucas.haug@thunderatz.org>
  *
- * @date 03/2019
+ * @date 03/2020
  */
 
 #include <stdio.h>
@@ -39,7 +39,7 @@ void print_dojo() {
 
     printf("%s", "╔");
 
-    for (int i = 0; i < DOJO_LINES + 42; i++) {
+    for (int i = 0; i < DOJO_COLUMNS; i++) {
         printf("%s", "═");
     }
 
@@ -58,7 +58,7 @@ void print_dojo() {
 
     printf("%s", "╚");
 
-    for (int i = 0; i < DOJO_LINES + 42; i++) {
+    for (int i = 0; i < DOJO_COLUMNS; i++) {
         printf("%s", "═");
     }
 
