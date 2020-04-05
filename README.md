@@ -15,4 +15,4 @@ O planejamento atual das etapas é esse:
 | :---                                 |     :----:    |
 | Videoaula de git                     | 23/03         |
 | Disponibilização do material de C    | 30/03         |
-| Videoaulas de embarcados             | 13/04 - 18/04 |
+| Videoaulas de embarcados             | 09/04 - 14/04 |
