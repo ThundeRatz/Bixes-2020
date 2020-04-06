@@ -3,6 +3,14 @@
 
 #include "header_file.h"
 
+#if defined(_WIN32)
+#include <windows.h>
+#define delay(ms) Sleep((ms))
+#else
+#include <unistd.h>
+#define delay(ms) sleep((ms) / 1000.0)
+#endif
+
 #define TIM_PERIOD 500
 
 static uint8_t bt_recv;
@@ -90,17 +98,6 @@ void distance_sensors_update(void) {
 
             distance_sensors[__sensors[i]] =
                 FILTER_VALUE * ranges[i] + (1 - FILTER_VALUE) * distance_sensors[__sensors[i]];
-    }
-}
-
-void delay(int ms)
-{
-    // Stroing start time
-    clock_t start_time = clock();
-
-    // looping till required time is not acheived
-    while (clock() < start_time + ms){
-
     }
 }
 
