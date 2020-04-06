@@ -41,7 +41,7 @@ void set_speed(float speed) {
 }
 
 void move_up() {
-    if (rozeta_line - 1 > 0) {
+    if (rozeta_line > 0) {
         rozeta_line--;
     }
 
@@ -65,7 +65,7 @@ void move_right() {
 }
 
 void move_left() {
-    if (rozeta_column - 1 > 0) {
+    if (rozeta_column > 0) {
         rozeta_column--;
     }
 
