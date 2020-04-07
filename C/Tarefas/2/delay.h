@@ -15,7 +15,7 @@
  * Public Functions Prototypes
  *****************************************/
 
-#if defined(_WIN32)
+#if defined (_WIN32)
 #include <windows.h>
 #define delay(ms) Sleep((ms))
 #else
