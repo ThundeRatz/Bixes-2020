@@ -20,7 +20,7 @@
 #define delay(ms) Sleep((ms))
 #else
 #include <unistd.h>
-#define delay(ms) usleep((ms) * 1000.0)
+#define delay(ms) usleep((ms) * 1000)
 #endif
 
 #endif // __DELAY_H__
