@@ -35,9 +35,11 @@ Isso cria os objetos, usa-os e os apaga, mas isso só em bom quando temos um ou 
 se tivermos vários, é melhor o primeiro método, já que se mudarmos algo só precisamos recriar os .o
 dos arquivos modificados. Já se tivermos realmente *muitos* arquivos, o melhor é utilizar um Makefile.
 * Também existem [várias flags][gcc-flags] que podem ser colocadas no final dessa linha, como `-Wall`,
-que habilita vários warnings úteis. Para uso na guerra, sempre usem `-Wall -Wextra`, que ativam muitos
+que habilita vários warnings úteis. Para uso na guerra, **sempre** usem `-Wall -Wextra`, que ativam muitos
 warnings. Eles geralmente te avisam de qualquer erro facilmente identificável por passagem de tipos errados
-e expressões que podem ter efeitos indesejados.
+e expressões que podem ter efeitos indesejados. Além disso, é recomendável definir um nível de otimização 
+para o compilador, para isso existem várias opções, recomendo deixar `-Og`, que otimiza o código para se 
+utilizar ferramentas de depuração.
 
 #### Exemplo
 Para compilar o programa na pasta Exemplo:
