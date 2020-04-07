@@ -1,5 +1,6 @@
 BUILD_DIR := build
 TARGET := tarefa_c
+FLAGS := -Og -Wall -Wextra
 
 SOURCES = $(wildcard *.c)
 OBJECTS = $(patsubst %.c, $(BUILD_DIR)/%.o, $(SOURCES))
@@ -13,7 +14,7 @@ $(BUILD_DIR):
 	@mkdir -p $@
 
 $(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
-	gcc -g -Wall -Wextra -o $@ -c $^
+	gcc $(FLAGS) -o $@ -c $^
 
 clean:
 ifeq ($(OS), Windows_NT)
@@ -23,7 +24,7 @@ else
 endif
 
 tarefa_c: $(OBJECTS)
-	gcc -g -Wall -Wextra -o tarefa_c $(OBJECTS)
+	gcc $(FLAGS) -o tarefa_c $(OBJECTS)
 
 run: all
 ifeq ($(OS), Windows_NT)
