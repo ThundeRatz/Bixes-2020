@@ -3,7 +3,7 @@
 
 #include "header_file.h"
 
-#if defined (_WIN32)
+#if defined _WIN32 || defined __CYGWIN__
 #include <windows.h>
 #define delay(ms) Sleep((ms))
 #else
