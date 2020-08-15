@@ -4,7 +4,7 @@
 
 - [Índice](#Índice)
 - [Introdução](#introdução)
-- [Intruções para instalação](#intruções-para-instalação)
+- [Instruções para instalação](#instruções-para-instalação)
     - [Windows](#windows)
         - [GCC e Make](#gcc-e-make)
         - [Git](#git)
@@ -33,7 +33,7 @@ Para realizar as tarefas do Processo Seletivo, é necessário instalar algumas c
 
 Os seis primeiros itens são ferramentas essenciais para qualquer membro da computação da equipe. Já o VSCode é um editor de texto com várias ferramentas e extensões que auxiliam na hora de programar, não é essencial, mas muito recomendado.
 
-# Intruções para instalação
+# Instruções para instalação
 
 ## Windows
 
