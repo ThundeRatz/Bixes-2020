@@ -12,7 +12,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   geometry_msgs
-  message_generation
 )
 
 ################################################################################
@@ -23,11 +22,6 @@ catkin_python_setup()
 ################################################################################
 # Declare ROS messages, services and actions
 ################################################################################
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-  geometry_msgs
-)
 
 ################################################################################
 # Declare ROS dynamic reconfigure parameters
