@@ -7,9 +7,9 @@
   <license>MIT</license>
   <!-- <url type="repository">http://wiki.ros.org/thor_the_turtle</url> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <depend>turtlebot3_description</depend>
-  <depend>turtlebot3_examples</depend>
-  <depend>turtlebot3_gazebo</depend>
+  <exec_depend>turtlebot3_description</exec_depend>
+  <exec_depend>turtlebot3_examples</exec_depend>
+  <exec_depend>turtlebot3_gazebo</exec_depend>
   <export>
     <metapackage/>
   </export>
