@@ -16,11 +16,7 @@
   <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3_simulations</url>
   <url type="bugtracker">https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues</url>
   <buildtool_depend>catkin</buildtool_depend>
-  <depend>roscpp</depend>
   <depend>std_msgs</depend>
-  <depend>sensor_msgs</depend>
-  <depend>geometry_msgs</depend>
-  <depend>nav_msgs</depend>
   <depend>tf</depend>
   <depend>gazebo_ros</depend>
   <exec_depend>gazebo</exec_depend>
