@@ -31,9 +31,9 @@ import rospy
 from geometry_msgs.msg import Twist
 import sys, select, os
 if os.name == 'nt':
-  import msvcrt
+    import msvcrt
 else:
-  import tty, termios
+    import tty, termios
 
 BURGER_MAX_LIN_VEL = 0.22
 BURGER_MAX_ANG_VEL = 2.84
@@ -54,10 +54,8 @@ Moving around:
 
 w/x : increase/decrease linear velocity (Burger : ~ 0.22, Waffle and Waffle Pi : ~ 0.26)
 a/d : increase/decrease angular velocity (Burger : ~ 2.84, Waffle and Waffle Pi : ~ 1.82)
-
 space key, s : force stop
-
-CTRL-C to quit
+q : quit
 """
 
 e = """
@@ -66,7 +64,7 @@ Communications Failed
 
 def getKey():
     if os.name == 'nt':
-      return msvcrt.getch()
+        return msvcrt.getch()
 
     tty.setraw(sys.stdin.fileno())
     rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
@@ -78,59 +76,62 @@ def getKey():
     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
     return key
 
+
 def vels(target_linear_vel, target_angular_vel):
     return "currently:\tlinear vel %s\t angular vel %s " % (target_linear_vel,target_angular_vel)
 
-def makeSimpleProfile(output, input, slop):
-    if input > output:
-        output = min( input, output + slop )
-    elif input < output:
-        output = max( input, output - slop )
+
+def makeSimpleProfile(out_value, in_value, slop):
+    if in_value > out_value:
+        out_value = min( in_value, out_value + slop )
+    elif in_value < out_value:
+        out_value = max( in_value, out_value - slop )
     else:
-        output = input
+        out_value = in_value
 
-    return output
+    return out_value
 
-def constrain(input, low, high):
-    if input < low:
-      input = low
-    elif input > high:
-      input = high
+
+def constrain(in_value, low, high):
+    if in_value < low:
+        in_value = low
+    elif in_value > high:
+        in_value = high
     else:
-      input = input
+        in_value = in_value
 
-    return input
+    return in_value
 
-def checkLinearLimitVelocity(vel):
-    if turtlebot3_model == "burger":
-      vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
-    elif turtlebot3_model == "waffle" or turtlebot3_model == "waffle_pi":
-      vel = constrain(vel, -WAFFLE_MAX_LIN_VEL, WAFFLE_MAX_LIN_VEL)
+
+def checkLinearLimitVelocity(vel, model):
+    if model == "burger":
+        vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
+    elif model == "waffle" or model == "waffle_pi":
+        vel = constrain(vel, -WAFFLE_MAX_LIN_VEL, WAFFLE_MAX_LIN_VEL)
     else:
-      vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
+        vel = constrain(vel, -BURGER_MAX_LIN_VEL, BURGER_MAX_LIN_VEL)
 
     return vel
 
-def checkAngularLimitVelocity(vel):
-    if turtlebot3_model == "burger":
-      vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
-    elif turtlebot3_model == "waffle" or turtlebot3_model == "waffle_pi":
-      vel = constrain(vel, -WAFFLE_MAX_ANG_VEL, WAFFLE_MAX_ANG_VEL)
+
+def checkAngularLimitVelocity(vel, model):
+    if model == "burger":
+        vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
+    elif model == "waffle" or model == "waffle_pi":
+        vel = constrain(vel, -WAFFLE_MAX_ANG_VEL, WAFFLE_MAX_ANG_VEL)
     else:
-      vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
+        vel = constrain(vel, -BURGER_MAX_ANG_VEL, BURGER_MAX_ANG_VEL)
 
     return vel
 
-if __name__=="__main__":
-    if os.name != 'nt':
-        settings = termios.tcgetattr(sys.stdin)
 
+def main():
     rospy.init_node('turtlebot3_teleop')
     pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
 
     turtlebot3_model = rospy.get_param("model", "burger")
 
-    status = 0
+    status_counter = 0
     target_linear_vel   = 0.0
     target_angular_vel  = 0.0
     control_linear_vel  = 0.0
@@ -138,37 +139,39 @@ if __name__=="__main__":
 
     try:
         print(msg)
-        while(1):
+        while not rospy.is_shutdown():
             key = getKey()
             if key == 'w' :
-                target_linear_vel = checkLinearLimitVelocity(target_linear_vel + LIN_VEL_STEP_SIZE)
-                status = status + 1
+                target_linear_vel = checkLinearLimitVelocity(target_linear_vel + LIN_VEL_STEP_SIZE, turtlebot3_model)
+                status_counter += 1
                 print(vels(target_linear_vel,target_angular_vel))
             elif key == 'x' :
-                target_linear_vel = checkLinearLimitVelocity(target_linear_vel - LIN_VEL_STEP_SIZE)
-                status = status + 1
+                target_linear_vel = checkLinearLimitVelocity(target_linear_vel - LIN_VEL_STEP_SIZE, turtlebot3_model)
+                status_counter += 1
                 print(vels(target_linear_vel,target_angular_vel))
             elif key == 'a' :
-                target_angular_vel = checkAngularLimitVelocity(target_angular_vel + ANG_VEL_STEP_SIZE)
-                status = status + 1
+                target_angular_vel = checkAngularLimitVelocity(target_angular_vel + ANG_VEL_STEP_SIZE, turtlebot3_model)
+                status_counter += 1
                 print(vels(target_linear_vel,target_angular_vel))
             elif key == 'd' :
-                target_angular_vel = checkAngularLimitVelocity(target_angular_vel - ANG_VEL_STEP_SIZE)
-                status = status + 1
+                target_angular_vel = checkAngularLimitVelocity(target_angular_vel - ANG_VEL_STEP_SIZE, turtlebot3_model)
+                status_counter += 1
                 print(vels(target_linear_vel,target_angular_vel))
             elif key == ' ' or key == 's' :
                 target_linear_vel   = 0.0
                 control_linear_vel  = 0.0
                 target_angular_vel  = 0.0
                 control_angular_vel = 0.0
-                print(vels(target_linear_vel, target_angular_vel))
+                print(vels(target_linear_vel,target_angular_vel))
             else:
-                if (key == '\x03'):
+                if (key == 'q'):
                     break
 
-            if status == 20 :
+            
+
+            if status_counter == 20 :
                 print(msg)
-                status = 0
+                status_counter = 0
 
             twist = Twist()
 
@@ -181,13 +184,24 @@ if __name__=="__main__":
             pub.publish(twist)
 
     except:
-        print(e)
+        rospy.loginfo(e)
 
     finally:
         twist = Twist()
         twist.linear.x = 0.0; twist.linear.y = 0.0; twist.linear.z = 0.0
         twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = 0.0
         pub.publish(twist)
-
+    
     if os.name != 'nt':
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+
+
+
+if __name__ == '__main__':
+    try:
+        if os.name != 'nt':
+            settings = termios.tcgetattr(sys.stdin)
+
+        main()
+    except:
+        rospy.loginfo("shutdown program.")
