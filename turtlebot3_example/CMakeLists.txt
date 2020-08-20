@@ -45,8 +45,6 @@ catkin_package(
     sensor_msgs
     geometry_msgs
     nav_msgs
-  INCLUDE_DIRS 
-    include
 )
 
 ################################################################################
@@ -58,7 +56,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(turtlebot3_drive nodes/turtlebot3_drive.cpp)
+add_executable(turtlebot3_drive scripts/turtlebot3_drive.cpp)
 add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES})
 
@@ -66,9 +64,9 @@ target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES})
 # Install
 ################################################################################
 catkin_install_python(PROGRAMS 
-  nodes/turtlebot3_obstacle.py
-  nodes/turtlebot3_pointop_key.py
-  nodes/turtlebot3_teleop_key.py
+  scripts/turtlebot3_obstacle.py
+  scripts/turtlebot3_pointop_key.py
+  scripts/turtlebot3_teleop_key.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
