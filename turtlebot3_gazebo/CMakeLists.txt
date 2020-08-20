@@ -35,7 +35,7 @@ find_package(gazebo REQUIRED)
 ################################################################################
 catkin_package(
   CATKIN_DEPENDS std_msgs tf gazebo_ros
-  DEPENDS gazebo
+  DEPENDS GAZEBO
 )
 
 ################################################################################
