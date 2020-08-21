@@ -31,47 +31,78 @@ Insert xyz - coordinate.
 x : position x (m)
 y : position y (m)
 z : orientation z (degree: -180 ~ 180)
-If you want to close, insert 's'
+q : quit
 -----------------------
 """
+        
+def shutdown():
+    rospy.Publisher('cmd_vel', Twist, queue_size=1).publish(Twist())
+    rospy.sleep(1)
 
 
-class GotoPoint():
-    def __init__(self):
-        rospy.init_node('turtlebot3_pointop_key', anonymous=False)
-        rospy.on_shutdown(self.shutdown)
-        self.cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
-        position = Point()
-        move_cmd = Twist()
-        r = rospy.Rate(10)
-        self.tf_listener = tf.TransformListener()
-        self.odom_frame = 'odom'
-
+def getkey():
+    return_value = ""
+    in_string = input("| x | y | z |\n")
+    if in_string[0] == 'q':
+        shutdown()
+    else:
         try:
-            self.tf_listener.waitForTransform(self.odom_frame, 'base_footprint', rospy.Time(), rospy.Duration(1.0))
-            self.base_frame = 'base_footprint'
-        except (tf.Exception, tf.ConnectivityException, tf.LookupException):
-            try:
-                self.tf_listener.waitForTransform(self.odom_frame, 'base_link', rospy.Time(), rospy.Duration(1.0))
-                self.base_frame = 'base_link'
-            except (tf.Exception, tf.ConnectivityException, tf.LookupException):
-                rospy.loginfo("Cannot find transform between odom and base_link or base_footprint")
-                rospy.signal_shutdown("tf Exception")
+            x, y, z = in_string.split()
+            return_value = [float(x), float(y), float(z)]
+        except ValueError:
+            shutdown()
+    return return_value
 
-        (position, rotation) = self.get_odom()
+
+def get_odom(tf_listener, odom_frame, base_frame):
+    try:
+        (trans, rot) = tf_listener.lookupTransform(odom_frame, base_frame, rospy.Time(0))
+        rotation = euler_from_quaternion(rot)
+
+    except (tf.Exception, tf.ConnectivityException, tf.LookupException):
+        rospy.loginfo("TF Exception")
+        return
+
+    return (Point(*trans), rotation[2])
+
+
+def main():
+    rospy.init_node('turtlebot3_pointop_key', anonymous=False)
+    rospy.on_shutdown(shutdown)
+    cmd_vel_pub = rospy.Publisher('cmd_vel', Twist, queue_size=5)
+    position = Point()
+    move_cmd = Twist()
+    r = rospy.Rate(10)
+    tf_listener = tf.TransformListener()
+    odom_frame = 'odom'
+
+    try:
+        tf_listener.waitForTransform(odom_frame, 'base_footprint', rospy.Time(), rospy.Duration(1.0))
+        base_frame = 'base_footprint'
+    except (tf.Exception, tf.ConnectivityException, tf.LookupException):
+        try:
+            tf_listener.waitForTransform(odom_frame, 'base_link', rospy.Time(), rospy.Duration(1.0))
+            base_frame = 'base_link'
+        except (tf.Exception, tf.ConnectivityException, tf.LookupException):
+            rospy.loginfo("Cannot find transform between odom and base_link or base_footprint")
+            rospy.signal_shutdown("tf Exception")
+
+    while not rospy.is_shutdown():
+        print(msg)
+        (position, rotation) = get_odom(tf_listener, odom_frame, base_frame)
         last_rotation = 0
         linear_speed = 1
         angular_speed = 1
-        (goal_x, goal_y, goal_z) = self.getkey()
+        (goal_x, goal_y, goal_z) = getkey()
         if goal_z > 180 or goal_z < -180:
             print("you input wrong z range.")
-            self.shutdown()
+            shutdown()
         goal_z = np.deg2rad(goal_z)
         goal_distance = sqrt(pow(goal_x - position.x, 2) + pow(goal_y - position.y, 2))
         distance = goal_distance
 
         while distance > 0.05:
-            (position, rotation) = self.get_odom()
+            (position, rotation) = get_odom(tf_listener, odom_frame, base_frame)
             x_start = position.x
             y_start = position.y
             path_angle = atan2(goal_y - y_start, goal_x- x_start)
@@ -96,12 +127,12 @@ class GotoPoint():
                 move_cmd.angular.z = max(move_cmd.angular.z, -1.5)
 
             last_rotation = rotation
-            self.cmd_vel.publish(move_cmd)
+            cmd_vel_pub.publish(move_cmd)
             r.sleep()
-        (position, rotation) = self.get_odom()
+        (position, rotation) = get_odom(tf_listener, odom_frame, base_frame)
 
         while abs(rotation - goal_z) > 0.05:
-            (position, rotation) = self.get_odom()
+            (position, rotation) = get_odom(tf_listener, odom_frame, base_frame)
             if goal_z >= 0:
                 if rotation <= goal_z and rotation >= goal_z - pi:
                     move_cmd.linear.x = 0.00
@@ -116,43 +147,17 @@ class GotoPoint():
                 else:
                     move_cmd.linear.x = 0.00
                     move_cmd.angular.z = 0.5
-            self.cmd_vel.publish(move_cmd)
+            cmd_vel_pub.publish(move_cmd)
             r.sleep()
 
 
         rospy.loginfo("Stopping the robot...")
-        self.cmd_vel.publish(Twist())
-
-    def getkey(self):
-        x, y, z = input("| x | y | z |\n").split()
-        if x == 's':
-            self.shutdown()
-        x, y, z = [float(x), float(y), float(z)]
-        return x, y, z
-
-    def get_odom(self):
-        try:
-            (trans, rot) = self.tf_listener.lookupTransform(self.odom_frame, self.base_frame, rospy.Time(0))
-            rotation = euler_from_quaternion(rot)
-
-        except (tf.Exception, tf.ConnectivityException, tf.LookupException):
-            rospy.loginfo("TF Exception")
-            return
-
-        return (Point(*trans), rotation[2])
-
-
-    def shutdown(self):
-        self.cmd_vel.publish(Twist())
-        rospy.sleep(1)
+        cmd_vel_pub.publish(Twist())
 
 
 if __name__ == '__main__':
     try:
-        while not rospy.is_shutdown():
-            print(msg)
-            GotoPoint()
-
+        main()
     except:
         rospy.loginfo("shutdown program.")
 
