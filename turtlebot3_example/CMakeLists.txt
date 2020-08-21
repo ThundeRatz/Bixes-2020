@@ -64,6 +64,7 @@ target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES})
 # Install
 ################################################################################
 catkin_install_python(PROGRAMS 
+  scripts/turtlebot3_drive_py.py
   scripts/turtlebot3_obstacle.py
   scripts/turtlebot3_pointop_key.py
   scripts/turtlebot3_teleop_key.py
