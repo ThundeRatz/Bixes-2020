@@ -23,6 +23,7 @@ import math
 from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist
+from tf.transformations import euler_from_quaternion
 
 
 #################################################
@@ -48,11 +49,12 @@ TB3_LEFT_TURN = 3
 #################################################
 
 
-def odom_msg_callback(msg, tb3_pose):
-    siny = 2.0 * (msg.pose.pose.orientation.w * msg.pose.pose.orientation.z + msg.pose.pose.orientation.x * msg.pose.pose.orientation.y)
-    cosy = 1.0 - 2.0 * (msg.pose.pose.orientation.y * msg.pose.pose.orientation.y + msg.pose.pose.orientation.z * msg.pose.pose.orientation.z) 
-
-    tb3_pose = math.atan2(siny, cosy)
+def odom_msg_callback(msg, tb3_orientation):
+    quaternion = msg.pose.pose.orientation
+    quatenion_list = [quaternion.x, quaternion.y, quaternion.z, quaternion.w]
+    
+    for i in range(len(tb3_orientation)):
+        tb3_orientation[i] = euler_from_quaternion(quatenion_list)[i]
 
 
 
@@ -77,11 +79,11 @@ def update_command_velocity(linear, angular, cmd_vel_pub):
 
 
 
-def control_loop(scan_data, tb3_pose, cmd_vel_pub):
+def control_loop(scan_data, tb3_orientation, cmd_vel_pub):
     escape_range = math.radians(30.0)
     check_forward_dist = 0.7
     check_side_dist = 0.6
-    prev_tb3_pose = 0.0
+    prev_tb3_orientation_z = 0.0
 
     turtlebot3_state = GET_TB3_DIRECTION
 
@@ -89,32 +91,32 @@ def control_loop(scan_data, tb3_pose, cmd_vel_pub):
         if (turtlebot3_state == GET_TB3_DIRECTION):
             if (scan_data[CENTER] > check_forward_dist):
                 if (scan_data[LEFT] < check_side_dist):
-                    prev_tb3_pose = tb3_pose
+                    prev_tb3_orientation_z = tb3_orientation[2]
                     turtlebot3_state = TB3_RIGHT_TURN
 
                 elif (scan_data[RIGHT] < check_side_dist):
-                    prev_tb3_pose = tb3_pose
+                    prev_tb3_orientation_z = tb3_orientation[2]
                     turtlebot3_state = TB3_LEFT_TURN
 
                 else:
                     turtlebot3_state = TB3_DRIVE_FORWARD
 
             else:
-                prev_tb3_pose = tb3_pose
-                turtlebot3_state = TB3_RIGHT_TURN
+                prev_tb3_orientation_z = tb3_orientation[2]
+                turtlebot3_state = TB3_LEFT_TURN
 
         elif (turtlebot3_state == TB3_DRIVE_FORWARD):
             update_command_velocity(LINEAR_VELOCITY, 0.0, cmd_vel_pub)
             turtlebot3_state = GET_TB3_DIRECTION
 
         elif (turtlebot3_state == TB3_RIGHT_TURN):    
-            if (math.fabs(prev_tb3_pose - tb3_pose) >= escape_range):
+            if (math.fabs(prev_tb3_orientation_z - tb3_orientation[2]) >= escape_range):
                 turtlebot3_state = GET_TB3_DIRECTION
             else:
                 update_command_velocity(0.0, -1 * ANGULAR_VELOCITY, cmd_vel_pub)
 
-        elif (turtlebot3_state ==TB3_LEFT_TURN):
-            if (math.fabs(prev_tb3_pose - tb3_pose) >= escape_range):
+        elif (turtlebot3_state == TB3_LEFT_TURN):
+            if (math.fabs(prev_tb3_orientation_z - tb3_orientation[2]) >= escape_range):
                 turtlebot3_state = GET_TB3_DIRECTION
             else:
                 update_command_velocity(0.0, ANGULAR_VELOCITY, cmd_vel_pub)
@@ -133,14 +135,14 @@ def main():
     print("TurtleBot3 Simulation Node Init")
 
     scan_data = [.0, .0, .0]
-    tb3_pose = 0.0
+    tb3_orientation = [.0, .0, .0]
 
     cmd_vel_pub = rospy.Publisher("cmd_vel", Twist, queue_size=10)
     
     rospy.Subscriber("scan", LaserScan, laser_scan_msg_callback, scan_data, 10) 
-    rospy.Subscriber("odom", Odometry, odom_msg_callback, tb3_pose, 10) 
+    rospy.Subscriber("odom", Odometry, odom_msg_callback, tb3_orientation, 10)
 
-    control_loop(scan_data, tb3_pose, cmd_vel_pub)
+    control_loop(scan_data, tb3_orientation, cmd_vel_pub)
 
 
 if __name__ == '__main__':
