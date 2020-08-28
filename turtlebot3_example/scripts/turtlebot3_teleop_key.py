@@ -30,10 +30,7 @@
 import rospy
 from geometry_msgs.msg import Twist
 import sys, select, os
-if os.name == 'nt':
-    import msvcrt
-else:
-    import tty, termios
+import tty, termios
 
 BURGER_MAX_LIN_VEL = 0.22
 BURGER_MAX_ANG_VEL = 2.84
@@ -63,11 +60,9 @@ Communications Failed
 """
 
 def getKey():
-    if os.name == 'nt':
-        return msvcrt.getch()
-
     tty.setraw(sys.stdin.fileno())
     rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
+
     if rlist:
         key = sys.stdin.read(1)
     else:
@@ -139,6 +134,7 @@ def main():
 
     try:
         print(msg)
+
         while not rospy.is_shutdown():
             key = getKey()
             if key == 'w' :
@@ -167,8 +163,6 @@ def main():
                 if (key == 'q'):
                     break
 
-            
-
             if status_counter == 20 :
                 print(msg)
                 status_counter = 0
@@ -192,15 +186,13 @@ def main():
         twist.angular.x = 0.0; twist.angular.y = 0.0; twist.angular.z = 0.0
         pub.publish(twist)
     
-    if os.name != 'nt':
-        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
+    termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
 
 
 
 if __name__ == '__main__':
     try:
-        if os.name != 'nt':
-            settings = termios.tcgetattr(sys.stdin)
+        settings = termios.tcgetattr(sys.stdin)
 
         main()
     except:
