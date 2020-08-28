@@ -151,8 +151,8 @@ def main():
                 move_cmd.angular.z = max(move_cmd.angular.z, -MAX_ANGULAR_VELOCITY)
 
             goal_distance = distance_between_points(Point(goal_x, goal_y, 0), Point(x_start, y_start, 0))
-            linear_cmd = min(linear_speed * goal_distance, MAX_LINEAR_VELOCITY) # don't go to fast in the wrong direction
-            move_cmd.linear.x = max(linear_cmd - abs(move_cmd.angular.z) / 5, 0)
+            linear_cmd = min(linear_speed * goal_distance, MAX_LINEAR_VELOCITY)
+            move_cmd.linear.x = max(linear_cmd - abs(move_cmd.angular.z) / 5, 0) # don't go to fast in the wrong direction
 
             last_rotation = rotation
             cmd_vel_pub.publish(move_cmd)
