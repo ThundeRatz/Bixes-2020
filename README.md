@@ -74,7 +74,7 @@ Agora, é possível controlar a velocidade angular e linear do robô usando as t
 
 ![node_graph](media/node_graph.png)
 
-Explore os outros ambientes disponíveis e tente entender o código dos 4 exemplos fornecidos. Comece do mais simples para o mais complexo. Sugerimos a ordem: `teleop`, `obstacle`, `pointop` e por fim, `drive`. Caso tenha dúvidas, o ROS tem uma [wiki](http://wiki.ros.org/) com documentação excelente, e é claro, pergunte para seus veteranos.
+Explore os outros ambientes disponíveis e tente entender o código dos 3 exemplos fornecidos. Comece do mais simples para o mais complexo. Sugerimos a ordem: `teleop`, `obstacle` e, por fim, `pointop`. Caso tenha dúvidas, o ROS tem uma [wiki](http://wiki.ros.org/) com documentação excelente, e é claro, pergunte para seus veteranos.
 
 ## Tarefa
 
