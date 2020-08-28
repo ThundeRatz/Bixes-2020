@@ -30,8 +30,8 @@ from tf.transformations import euler_from_quaternion
 #################################################
 
 
-MAX_LINEAR_VELOCITY = 0.3
-MAX_ANGULAR_VELOCITY = 1.5
+MAX_LINEAR_VELOCITY = 0.22
+MAX_ANGULAR_VELOCITY = 2.84
 
 control_msg = """
 control your Turtlebot3!
@@ -145,13 +145,14 @@ def main():
             
             move_cmd.angular.z = angular_speed * path_angle-rotation
 
-            goal_distance = distance_between_points(Point(goal_x, goal_y, 0), Point(x_start, y_start, 0))
-            move_cmd.linear.x = min(linear_speed * goal_distance, MAX_LINEAR_VELOCITY)
-
             if move_cmd.angular.z > 0:
                 move_cmd.angular.z = min(move_cmd.angular.z, MAX_ANGULAR_VELOCITY)
             else:
                 move_cmd.angular.z = max(move_cmd.angular.z, -MAX_ANGULAR_VELOCITY)
+
+            goal_distance = distance_between_points(Point(goal_x, goal_y, 0), Point(x_start, y_start, 0))
+            linear_cmd = min(linear_speed * goal_distance, MAX_LINEAR_VELOCITY) # don't go to fast in the wrong direction
+            move_cmd.linear.x = max(linear_cmd - abs(move_cmd.angular.z) / 5, 0)
 
             last_rotation = rotation
             cmd_vel_pub.publish(move_cmd)
