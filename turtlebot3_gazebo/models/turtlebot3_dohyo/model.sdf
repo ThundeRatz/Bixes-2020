@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+
+<sdf version='1.6'>
+  <model name='turtlebot3_dohyo'>
+
+
+    <link name='base_link'>
+      <pose frame=''>0 0 0 0 0 0</pose>
+
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>1.54</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <!-- <surface>
+          <contact>
+            <collide_bitmask>0xffff</collide_bitmask>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+            <torsional>
+              <ode/>
+            </torsional>
+          </friction>
+          <bounce/>
+        </surface> -->
+      </collision>
+      
+      <visual name='base_link_visual'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>1.54</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+          <ambient>1 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <static>1</static>
+  </model>
+</sdf>
