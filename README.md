@@ -78,14 +78,29 @@ Explore os outros ambientes disponíveis e tente entender o código dos 3 exempl
 
 ## Tarefa
 
-Agora é a hora de aplicar tudo o que vocês aprenderam no PS inteiro. Nesse projeto, vocês trabalharão em grupos de 3, e para que isso funcione, é muito importante relembrar como usar o git e como organizar as branches do repositório, mantendo tudo sempre organizado.
+Agora é a hora de aplicar tudo o que vocês aprenderam no PS inteiro. Nesse projeto, vocês trabalharão em grupos de 3, então, para que isso funcione, é muito importante relembrar como usar o git e como organizar as branches do repositório.
 
-Como vocês já devem ter lido no fórum, vocês devem programar um robô aspirador de pó estilo Roomba:
+Dito isso, vamos ao que importa. O tema dessa última tarefa é completamente livre, vocês vão escolher um problema ou tarefa, e resolvê-lo usando a plataforma do TurtleBot. Os objetivos principais é que vocês se familiarizem com o ambiente do ROS e sejam capazes de desenvolver uma aplicação do zero.
 
-![roomba_puppy](media/roomba_puppy.gif)
-![roomba_kiten](media/roomba_kiten.gif)
+Para ficar mais claro, vamos dar alguns exemplos do que fazer com o TurtleBot (sintam-se a vontade para "roubar" ou adaptar esses exemplos).
 
-O objetivo de vocês é que ele consiga se movimentar por um ambiente parecido com uma casa sem colidir com móveis e paredes, e cobrindo a maior área possível. Um bom lugar para buscar inspiração é nos próprios manuais desses robôs, para descobrir quais diferentes modos de operação eles possuem.
+1. Roomba
+
+    Esse é clássico, o TurtleBot ja tem uma carinha de Roomba, né? Nesse caso, o objetivo do projeto seria se movimentar por um ambiente parecido com uma casa (vejam o `turtlebot3_house.launch`) sem colidir com móveis e paredes e cobrindo a maior área possível.
+
+    ![roomba_puppy](media/roomba_puppy.gif)
+    ![roomba_kiten](media/roomba_kiten.gif)
+
+2. Roomba Gladiador
+
+    Se você é um "computeiro" que gosta de robô de combate, então essa pode ser uma ótima opção. Mas vamos deixar para vocês pensarem em como formular esse problema, caso escolham uma abordagem nesse estilo.
+
+    ![roomba_kiten](media/roomba_wars.gif)
+
+3. Turtle Sumô
+
+    Quantas estratégias diferentes para um robô de sumô você conseguiria criar tendo a disposição todos os sensores de um TurtleBot3?
+
 
 ### Especificações do projeto
 
@@ -97,15 +112,15 @@ O objetivo de vocês é que ele consiga se movimentar por um ambiente parecido c
 
 - Não adianta sair programando se vocês não sabem o que estão tentando fazer. Pensem no problema que precisam resolver, discutam em grupo e com seus veteranos, implementem uma possível solução, testem. (E como nada funciona de primeira, repitam o processo).
 - Documentem o código e o pacote em sí. Vai ajudar todo mundo.
-- Não modifiquem os 3 pacotes já existentes, priciplamente o de simulação e o de descrição dos robôs.
+- Só modifiquem os 3 pacotes existentes se for realmente necessário, priciplamente o de simulação e o de descrição dos robôs.
 
 ### Prazo
 
-Vocês tem até xx/09/2020 para entregar o projeto concluído. Organizem o tempo e não deixem para a última hora.
+Vocês tem até 13/09/2020 para entregar o projeto concluído. Organizem o tempo e não deixem para a última hora.
 
 ## Referências
 Todo o material presente aqui foi adaptado dos repositórios originais do TurtleBot3. Para mais informações:
 - [e-Manual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
-- [Source Code Rpository](https://github.com/ROBOTIS-GIT/turtlebot3)
+- [Source Code Repository](https://github.com/ROBOTIS-GIT/turtlebot3)
 - [Simulation Repository](https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
 - [ROS Messages Repository](https://github.com/ROBOTIS-GIT/turtlebot3_msgs)
