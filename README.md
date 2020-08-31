@@ -95,11 +95,13 @@ Para ficar mais claro, vamos dar alguns exemplos do que fazer com o TurtleBot (s
 
     Se você é um "computeiro" que gosta de robô de combate, então essa pode ser uma ótima opção. Mas vamos deixar para vocês pensarem em como formular esse problema, caso escolham uma abordagem nesse estilo.
 
-    ![roomba_kiten](media/roomba_wars.gif)
+    ![roomba_wars](media/roomba_wars.gif)
 
 3. Turtle Sumô
 
     Quantas estratégias diferentes para um robô de sumô você conseguiria criar tendo a disposição todos os sensores de um TurtleBot3?
+
+    ![turtle_sumo](media/turtle_sumo.gif)
 
 
 ### Especificações do projeto
