@@ -10,44 +10,75 @@
       <collision name='base_link_collision'>
         <pose frame=''>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
+          <!-- <cylinder>
             <radius>1.54</radius>
             <length>0.05</length>
-          </cylinder>
+          </cylinder> -->
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/dohyo.stl</uri>
+          </mesh>
         </geometry>
-        <!-- <surface>
-          <contact>
-            <collide_bitmask>0xffff</collide_bitmask>
-          </contact>
+
+        <surface>
           <friction>
             <ode>
-              <mu>0.6</mu>
-              <mu2>0.6</mu2>
+              <mu>100</mu>
+              <mu2>50</mu2>
             </ode>
-            <torsional>
-              <ode/>
-            </torsional>
           </friction>
-          <bounce/>
-        </surface> -->
+        </surface>
+
       </collision>
       
-      <visual name='base_link_visual'>
+      <visual name='base_link_visual_base'>
         <pose frame=''>0 0 0 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <radius>1.54</radius>
-            <length>0.05</length>
-          </cylinder>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/base.stl</uri>
+          </mesh>
         </geometry>
         <material>
           <script>
             <uri>file://media/materials/scripts/gazebo.material</uri>
             <name>Gazebo/FlatBlack</name>
           </script>
-          <ambient>1 1 1 1</ambient>
         </material>
       </visual>
+
+      <visual name='base_link_visual_borda'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/borda.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name='base_link_visual_shikiri'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/shikiri.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+
     </link>
     <static>1</static>
   </model>
