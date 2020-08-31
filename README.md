@@ -70,7 +70,7 @@ A GUI do Gazebo deve abrir com o ambiente e robô selecionados. Porém, ele não
 roslaunch turtlebot3_example turtlebot3_teleop_key.launch
 ```
 
-Agora, é possível controlar a velocidade angular e linear do robô usando as teclas indicadas. Para entender melhor o que está acontecendo, é possível listar os nodes e tópicos pelo terminal, ou usar o [rqt](http://wiki.ros.org/rqt) para uma visualização mais direta.
+Agora, é possível controlar a velocidade angular e linear do robô usando as teclas indicadas. Para entender melhor o que está acontecendo, podemos listar os nodes e tópicos pelo terminal, ou usar o [rqt](http://wiki.ros.org/rqt) para uma visualização mais direta.
 
 ![node_graph](media/node_graph.png)
 
@@ -80,7 +80,7 @@ Explore os outros ambientes disponíveis e tente entender o código dos 3 exempl
 
 Agora é a hora de aplicar tudo o que vocês aprenderam no PS inteiro. Nesse projeto, vocês trabalharão em grupos de 3, então, para que isso funcione, é muito importante relembrar como usar o git e como organizar as branches do repositório.
 
-Dito isso, vamos ao que importa. O tema dessa última tarefa é completamente livre, vocês vão escolher um problema ou tarefa, e resolvê-lo usando a plataforma do TurtleBot. Os objetivos principais é que vocês se familiarizem com o ambiente do ROS e sejam capazes de desenvolver uma aplicação do zero.
+Dito isso, vamos ao que importa. O tema dessa última tarefa é completamente livre, vocês vão escolher um problema ou tarefa, e resolvê-lo usando a plataforma do TurtleBot. Os objetivos principais são que vocês se familiarizem com o ambiente do ROS e sejam capazes de desenvolver uma aplicação do zero.
 
 Para ficar mais claro, vamos dar alguns exemplos do que fazer com o TurtleBot (sintam-se a vontade para "roubar" ou adaptar esses exemplos).
 
@@ -114,7 +114,7 @@ Para ficar mais claro, vamos dar alguns exemplos do que fazer com o TurtleBot (s
 
 - Não adianta sair programando se vocês não sabem o que estão tentando fazer. Pensem no problema que precisam resolver, discutam em grupo e com seus veteranos, implementem uma possível solução, testem. (E como nada funciona de primeira, repitam o processo).
 - Documentem o código e o pacote em sí. Vai ajudar todo mundo.
-- Só modifiquem os 3 pacotes existentes se for realmente necessário, priciplamente o de simulação e o de descrição dos robôs.
+- Só modifiquem os 3 pacotes existentes se for realmente necessário, pricipalmente o de simulação e o de descrição dos robôs.
 
 ### Prazo
 
