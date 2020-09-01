@@ -56,7 +56,7 @@ catkin_make
 
 Em seguida, é preciso indicar qual dos robôs será utilizado na simulação com o comando.
 ```bash
-export TURTLEBOT3_MODEL=${burger}
+export TURTLEBOT3_MODEL=burger
 ```
 Note que esse passo é necessário em qualquer novo terminal que for aberto.
 
