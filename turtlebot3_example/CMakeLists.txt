@@ -57,6 +57,7 @@ include_directories(
 ################################################################################
 
 catkin_install_python(PROGRAMS 
+  scripts/turtlebot3_drive.py
   scripts/turtlebot3_obstacle.py
   scripts/turtlebot3_pointop_key.py
   scripts/turtlebot3_teleop_key.py
