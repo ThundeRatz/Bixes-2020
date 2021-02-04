@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ros_basics</name>
+  <version>0.0.0</version>
+  <description>Tutorial básico usado na aula de ROS do Processo Seletivo da Comp</description>
+  <maintainer email="todo@todo.todo">ThunderComp</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>turtlesim</depend>
+
+  <export>
+  </export>
+</package>
