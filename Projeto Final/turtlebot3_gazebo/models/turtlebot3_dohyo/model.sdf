@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+
+<sdf version='1.6'>
+  <model name='turtlebot3_dohyo'>
+
+
+    <link name='base_link'>
+      <pose frame=''>0 0 0.025 0 0 0</pose>
+
+      <collision name='base_link_collision'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <!-- <cylinder>
+            <radius>1.54</radius>
+            <length>0.05</length>
+          </cylinder> -->
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/dohyo.stl</uri>
+          </mesh>
+        </geometry>
+
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+
+      </collision>
+      
+      <visual name='base_link_visual_base'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/base.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name='base_link_visual_borda'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/borda.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+
+      <visual name='base_link_visual_shikiri'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot3_dohyo/meshes/shikiri.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+
+    </link>
+    <static>1</static>
+  </model>
+</sdf>
