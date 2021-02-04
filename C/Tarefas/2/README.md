@@ -33,4 +33,4 @@ Utilizando todas essas funções, devem ser feitas as estratégias de forma que 
 
 ## Extra
 
-Para a tarefa extra, deve-se inicializar a posição do robô adversário randomicamente e deve ser feita uma função que retorna essa posição inicial do oponente, para então se escolher o que o robô fará.
+Para a tarefa extra, deve-se inicializar a posição do robô adversário randomicamente e deve ser feita uma função que deve procrar na matriz do dojo em qual das posições o oponente foi inicializado, para então se escolher o que o robô fará.
